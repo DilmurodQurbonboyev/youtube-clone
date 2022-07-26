@@ -1,5 +1,6 @@
 <?php
 return [
+    'name' => 'Studio Youtube',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
