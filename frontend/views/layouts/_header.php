@@ -4,6 +4,7 @@
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\helpers\Url;
 
 NavBar::begin(
     [
@@ -46,6 +47,18 @@ if (Yii::$app->user->isGuest) {
         . Html::endForm()
         . '</li>';
 }
+
+?>
+
+    <form action="<?= Url::to(['/video/search']) ?>" class="form-inline my-2 my-lg-0">
+        <input type="search" name="keyword"
+               class="form-control mr-sm-2" value="<?php echo Yii::$app->request->get('keyword') ?>"/>
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    </form>
+
+<?php
+
+
 echo Nav::widget(
     [
         'options' => [
@@ -55,3 +68,4 @@ echo Nav::widget(
     ]
 );
 NavBar::end();
+?>
